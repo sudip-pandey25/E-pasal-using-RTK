@@ -22,7 +22,9 @@ export default function RootLayout({
       <body
         className={`${inter.className} transition-all duration-300 ease-in-out `}
       >
-        <Navbar />
+        <Providers>
+          <Navbar />
+        </Providers>
         <Providers>{children}</Providers>
         <Footer />
       </body>

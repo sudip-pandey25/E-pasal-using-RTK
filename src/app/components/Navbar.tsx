@@ -3,7 +3,7 @@ import React from "react";
 import Menu from "./Menu";
 import Image from "next/image";
 import SearchBar from "./SearchBar";
-import Navbaritems from "./Navbaritems";
+import Navbaritems from "./Navbaritems.jsx";
 
 const Navbar = () => {
   return (
@@ -55,10 +55,10 @@ const Navbar = () => {
         </div>
 
         {/* Right */}
-        <div className="w-2/3 xl:w-1/2 flex flex-row justify-end gap-2 ">
+        <div className="w-2/3 xl:w-1/2 flex flex-row items-center justify-end gap-2 ">
           <SearchBar />
+          <Navbaritems />
         </div>
-        <Navbaritems />
       </div>
     </div>
   );

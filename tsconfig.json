@@ -27,7 +27,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/list/page.jsx",
-    "src/app/layout.tsx"
+    "src/app/layout.tsx",
+    "src/app/components/CartModel.jsx",
+    "src/app/components/Navbaritems.jsx"
   ],
   "exclude": ["node_modules"]
 }

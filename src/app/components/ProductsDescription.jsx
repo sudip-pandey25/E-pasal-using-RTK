@@ -1,8 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../reduxtoolKit/cart/cartSlice";
 
 const ProductsDescription = ({ product }) => {
   const [bulletpoints, setBulletPoints] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     function convertToBulletPoints(text) {
@@ -15,11 +18,22 @@ const ProductsDescription = ({ product }) => {
         <li key={index}>{sentence}</li>
       ));
       setBulletPoints(bulletPoints);
-      console.log(bulletpoints);
       return bulletPoints.join("\n");
     }
     convertToBulletPoints(product.description);
   }, [product]);
+
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        id: product.id,
+        imageUrl: product.image,
+        name: product.title,
+        price: product.price,
+        quantity: 1,
+      })
+    );
+  };
 
   return (
     <div className="w-full  flex flex-col gap-6 md:mt-6">
@@ -145,7 +159,10 @@ const ProductsDescription = ({ product }) => {
         <button className="px-4 py-2 bg-teal-400 rounded-2xl text-slate-100 hover:opacity-85">
           Buy Now
         </button>
-        <button className="rounded-2xl ring-1 ring-black px-4 py-2 hover:bg-black hover:text-white transition-all duration-300 ease-in-out">
+        <button
+          className="rounded-2xl ring-1 ring-black px-4 py-2 hover:bg-black hover:text-white transition-all duration-300 ease-in-out"
+          onClick={handleAddToCart}
+        >
           Add to Cart
         </button>
       </div>

@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// Async action for fetching products
 export const fetchCategory = createAsyncThunk(
   "products/fetchProducts",
   async (categories) => {
@@ -15,7 +14,7 @@ const categorySlice = createSlice({
   name: "category",
   initialState: {
     data: [],
-    status: "idle", // loading, succeeded, failed
+    status: "idle",
     error: null,
   },
   reducers: {},
