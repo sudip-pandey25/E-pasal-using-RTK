@@ -2,12 +2,15 @@
 
 import React from "react";
 import Image from "next/image";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../reduxtoolKit/cart/cartSlice";
 
 const CartModel = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const TotalPrice = useSelector((state) => state.cart.totalPrice);
   const TotalQuantity = useSelector((state) => state.totalQuantity);
+
+  const dispatch = useDispatch();
 
   return (
     <div className="absolute p-4 rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-white top-12 right-0 w-max flex flex-col gap-6 z-20 ">
@@ -40,7 +43,12 @@ const CartModel = () => {
                       <span className="text-gray-500 text-xs">
                         {items.quantity}
                       </span>
-                      <span className="text-blue-700 text-xs cursor-pointer">
+                      <span
+                        className="text-blue-700 text-xs cursor-pointer"
+                        onClick={() => {
+                          dispatch(removeFromCart(items.id));
+                        }}
+                      >
                         Remove
                       </span>
                     </div>

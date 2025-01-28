@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import CatergoriesComp from "./components/CatergoriesComp.jsx";
 import ProductsComp from "./components/ProductsComp.jsx";
 import Slider from "./components/Slider";
+import Features from "./components/Features.jsx";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
@@ -55,6 +56,10 @@ const HomePage = () => {
         ) : (
           <CatergoriesComp categories={categories} products={products} />
         )}
+      </div>
+      {/* Features part */}
+      <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+        <Features />
       </div>
     </div>
   );

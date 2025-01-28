@@ -29,7 +29,8 @@
     "src/app/list/page.jsx",
     "src/app/layout.tsx",
     "src/app/components/CartModel.jsx",
-    "src/app/components/Navbaritems.jsx"
+    "src/app/components/Navbaritems.jsx",
+    "src/app/components/Filter.jsx"
   ],
   "exclude": ["node_modules"]
 }
