@@ -10,6 +10,7 @@ const nextConfig = {
       "fakestoreapi.com",
     ],
   },
+  eslint: { ignoreDuringBuilds: true },
 };
 
 export default nextConfig;

@@ -36,11 +36,8 @@ const ProductsComp = ({ products, limit = 4 }) => {
   return (
     <div className="mt-12 flex gap-x-10 gap-y-16 justify-between flex-wrap">
       {products.slice(0, limit).map((product) => (
-        <div
-          className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]"
-          key={product.id}
-        >
-          <Link href={"/" + product.id} className="w-full">
+        <div className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]">
+          <Link href={"/" + product.id} className="w-full" key={product.id}>
             <div className="relative w-full h-60">
               <Image
                 src={product?.image}

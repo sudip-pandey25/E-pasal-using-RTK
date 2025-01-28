@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import CatergoriesComp from "./components/CatergoriesComp.jsx";
 import ProductsComp from "./components/ProductsComp.jsx";
