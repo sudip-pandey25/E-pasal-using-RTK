@@ -30,7 +30,8 @@
     "src/app/layout.tsx",
     "src/app/components/CartModel.jsx",
     "src/app/components/Navbaritems.jsx",
-    "src/app/components/Filter.jsx"
+    "src/app/components/Filter.jsx",
+    "src/app/components/Slider.jsx"
   ],
   "exclude": ["node_modules"]
 }

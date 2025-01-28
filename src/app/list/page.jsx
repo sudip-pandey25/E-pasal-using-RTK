@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Filter from "../components/Filter.jsx";
 import ProductsComp from "../components/ProductsComp";
 import { useSearchParams } from "next/navigation";
@@ -46,11 +46,13 @@ const page = () => {
   );
 
   return (
-    <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
-      {/* Filter Part */}
-      <Filter setSearchQuery={setSearchQuery} setPriceRange={setPriceRange} />
-      <ProductsComp products={searchResults} limit={100} />
-    </div>
+    <Suspense>
+      <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
+        {/* Filter Part */}
+        <Filter setSearchQuery={setSearchQuery} setPriceRange={setPriceRange} />
+        <ProductsComp products={searchResults} limit={100} />
+      </div>
+    </Suspense>
   );
 };
 
