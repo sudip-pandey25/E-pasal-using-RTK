@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import CatergoriesComp from "./components/CatergoriesComp.jsx";
 import ProductsComp from "./components/ProductsComp.jsx";
-import Slider from "./components/Slider";
+import Slider from "./components/Slider.jsx";
 import Features from "./components/Features.jsx";
 
 const HomePage = () => {

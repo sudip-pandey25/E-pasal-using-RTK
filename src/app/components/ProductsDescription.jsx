@@ -40,8 +40,8 @@ const ProductsDescription = ({ product }) => {
       <h1 className="text-5xl font-medium font-Philosopher">{product.title}</h1>
 
       <ul className=" text-gray-600 list-disc pl-6 text-lg">
-        {bulletpoints.map((bullet) => (
-          <li>{bullet}</li>
+        {bulletpoints.map((bullet, index) => (
+          <li key={index}>{bullet}</li>
         ))}
       </ul>
 
